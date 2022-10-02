@@ -47,7 +47,7 @@ Daftarkan akun hcaptcha anda [disini](https://dashboard.hcaptcha.com/signup)
 untuk mendapatkan hcaptcha sitekey dan hcaptcha secret.
 
 
-**2. Edit file `packages/hcaptcha/config/` dan tambahkan kredenislal anda:**
+**2. Edit file `packages/hcaptcha/config/main.php` dan tambahkan kredenislal anda:**
 
 ```php
 return [
