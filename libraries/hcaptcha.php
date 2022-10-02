@@ -2,6 +2,7 @@
 
 namespace Esyede;
 
+use System\Str;
 use System\Curl;
 use System\Input;
 use System\Config;
@@ -21,7 +22,7 @@ class Hcaptcha
         $script = '';
 
         if (! isset($attributes['data-callback'])) {
-            $fn = 'onSubmit'.str_replace(['-', '=', '\'', '"', '<', '>', '`'], '', $form_id);
+            $fn = 'onSubmit'.Str::studly(str_replace(['=', '\'', '"', '<', '>', '`'], '', $form_id));
             $attributes['data-callback'] = $fn;
             $script = sprintf('<script>function %s(){document.getElementById("%s").submit();}</script>', $fn, $form_id);
         }
