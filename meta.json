@@ -1,0 +1,5 @@
+{
+    "name": "hcaptcha",
+    "description": "Paket integrasi hcaptcha untuk rakit framework.",
+    "version": "v1.0.0"
+}
