@@ -22,7 +22,7 @@ class Hcaptcha
         $script = '';
 
         if (! isset($attributes['data-callback'])) {
-            $fn = 'onSubmit'.Str::studly(str_replace(['=', '\'', '"', '<', '>', '`'], '', $form_id));
+            $fn = 'onSubmit'.Str::studly(preg_replace('/[^a-zA-Z0-9_-]/', '', $form_id));
             $attributes['data-callback'] = $fn;
             $script = sprintf('<script>function %s(){document.getElementById("%s").submit();}</script>', $fn, $form_id);
         }
