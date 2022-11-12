@@ -67,7 +67,7 @@ class Hcaptcha
     {
         $attributes = array_filter($attributes);
         $attributes['data-sitekey'] = Config::get('hcaptcha::main.sitekey');
-        $attributes['class'] = str_replace('h-captcha', '', isset_or($attributes['class'], ''));
+        $attributes['class'] = str_replace('h-captcha', '', isset($attributes['class']) ? $attributes['class'] : '');
         $attributes['class'] = trim('h-captcha '.$attributes['class']);
         $html = [];
 
